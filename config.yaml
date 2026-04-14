@@ -1,0 +1,108 @@
+keywords:
+  - "大模型测试"
+  - "AI测试"
+  - "算法测试"
+  - "自动化测试开发"
+  - "测试开发工程师"
+  - "Agent产品"
+  - "AIGC产品"
+  - "AI策略产品"
+  - "LLM"
+  - "Agent开发"
+  - "大模型评测"
+  - "AI质量"
+  - "智能测试"
+
+cities:
+  - "北京"
+  - "上海"
+  - "杭州"
+  - "深圳"
+  - "广州"
+
+categories:
+  product:
+    name: "产品类"
+    keywords: ["产品经理", "策略产品", "AIGC产品", "Agent产品", "AI产品"]
+  test:
+    name: "测试类"
+    keywords: ["测试", "质量保障", "QA", "评测", "质量"]
+  agent:
+    name: "Agent类"
+    keywords: ["Agent开发", "Agent工程师", "LLM应用", "Agent"]
+  dev:
+    name: "开发类"
+    keywords: ["测试开发", "自动化", "工具开发", "平台开发"]
+
+platforms:
+  # Tier 1: 公司官网 API（最稳定）
+  tencent:
+    enabled: true
+    tier: 1
+    name: "腾讯"
+  alibaba:
+    enabled: true
+    tier: 1
+    name: "阿里巴巴"
+  bytedance:
+    enabled: true
+    tier: 1
+    name: "字节跳动"
+  baidu:
+    enabled: true
+    tier: 1
+    name: "百度"
+
+  # Tier 2: 第三方招聘平台 API
+  boss:
+    enabled: true
+    tier: 2
+    name: "Boss直聘"
+  liepin:
+    enabled: true
+    tier: 2
+    name: "猎聘"
+  zhilian:
+    enabled: true
+    tier: 2
+    name: "智联招聘"
+  job51:
+    enabled: true
+    tier: 2
+    name: "前程无忧"
+  lagou:
+    enabled: true
+    tier: 2
+    name: "拉勾"
+
+  # Tier 3: 浏览器自动化
+  linkedin:
+    enabled: true
+    tier: 3
+    name: "LinkedIn"
+  maimai:
+    enabled: false
+    tier: 3
+    name: "脉脉"
+
+  # 扩展: 更多公司官网（暂未启用）
+  meituan:
+    enabled: false
+    tier: 1
+    name: "美团"
+  kuaishou:
+    enabled: false
+    tier: 1
+    name: "快手"
+  xiaohongshu:
+    enabled: false
+    tier: 1
+    name: "小红书"
+  netease:
+    enabled: false
+    tier: 1
+    name: "网易"
+  huawei:
+    enabled: false
+    tier: 1
+    name: "华为"

@@ -1,0 +1,65 @@
+name: Daily Job Scrape
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # UTC 01:00 = 北京时间 09:00
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: '指定单个平台（留空则全部）'
+        required: false
+        default: ''
+      tier:
+        description: '指定层级 1/2/3（留空则全部）'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: python -m playwright install chromium --with-deps
+
+      - name: Run scraper
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.platform }}" ]; then
+            ARGS="--platform ${{ github.event.inputs.platform }}"
+          elif [ -n "${{ github.event.inputs.tier }}" ]; then
+            ARGS="--tier ${{ github.event.inputs.tier }}"
+          fi
+          python -m src.main $ARGS
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: daily job update $(date +%Y-%m-%d) [skip ci]"
+            git push
+          fi
