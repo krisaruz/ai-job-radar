@@ -40,10 +40,10 @@ platforms:
     enabled: true
     tier: 1
     name: "腾讯"
-  alibaba:
+  quark:
     enabled: true
     tier: 1
-    name: "阿里巴巴"
+    name: "阿里巴巴(千问/夸克)"
   bytedance:
     enabled: true
     tier: 1

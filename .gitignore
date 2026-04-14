@@ -21,3 +21,10 @@ data/.cookies/
 *~
 
 .history/
+
+# Temp scripts (probe/debug/one-off)
+_*.py
+_*.json
+_*.txt
+_*.png
+quick_scrape.py
