@@ -9,7 +9,7 @@ Target directions (from user's WPS JD reference):
 Additional constraints:
   - 社招 only, no 校招/实习
   - Education: 本科 or below (exclude 硕士/博士 requirement)
-  - Experience: <= 3 years (exclude 三年以上/五年以上/八年以上/3-5年/5-10年)
+  - Experience: allow up to 3 years requirement (exclude 五年以上/八年以上/5-10年)
 """
 from __future__ import annotations
 
@@ -23,12 +23,13 @@ logger = logging.getLogger(__name__)
 HIGH_EDU_REQUIRED = re.compile(r"硕士|博士|研究生|Master|PhD", re.IGNORECASE)
 
 HIGH_EXP_FIELD = re.compile(
-    r"(三年以上|五年以上|八年以上|十年以上|3-5年|5-10年|10年以上)",
+    r"(五年以上|八年以上|十年以上|5-10年|10年以上)",
 )
 
 HIGH_EXP_TEXT = re.compile(
     r"(\d+)\s*年以?上.{0,6}(工作|经验|经历)",
 )
+# "三年以上" and "3-5年" are OK (require 3 years, user qualifies)
 
 CAMPUS_RECRUIT = re.compile(
     r"(校招|应届|届\+|27届|28届|26届|毕业生|campus)",
