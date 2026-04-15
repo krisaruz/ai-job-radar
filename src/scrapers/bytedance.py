@@ -19,6 +19,10 @@ class BytedanceScraper(BrowserScraper):
     def platform_name(self) -> str:
         return "bytedance"
 
+    @property
+    def search_nationally(self) -> bool:
+        return True
+
     def _fetch_jobs_browser(self, page, keyword: str, city: str) -> list[JobPosting]:
         url = SEARCH_URL.format(keyword=keyword)
         jobs: list[JobPosting] = []

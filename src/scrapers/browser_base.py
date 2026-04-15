@@ -76,6 +76,11 @@ class BrowserScraper(ABC):
     @abstractmethod
     def platform_name(self) -> str: ...
 
+    @property
+    def search_nationally(self) -> bool:
+        """Override to True for career sites that search all cities at once."""
+        return False
+
     @abstractmethod
     def _fetch_jobs_browser(self, page, keyword: str, city: str) -> list[JobPosting]: ...
 
@@ -91,14 +96,17 @@ class BrowserScraper(ABC):
             logger.error("[%s] browser launch failed", self.platform_name, exc_info=True)
             return all_jobs
 
+        search_cities = [""] if self.search_nationally else cities
+
         try:
             for kw in keywords:
-                for city in cities:
+                for city in search_cities:
                     try:
-                        logger.info("[%s] browser search: %s @ %s", self.platform_name, kw, city)
+                        label = city or "全国"
+                        logger.info("[%s] browser search: %s @ %s", self.platform_name, kw, label)
                         jobs = self._fetch_jobs_browser(page, kw, city)
                         all_jobs.extend(jobs)
-                        time.sleep(random.uniform(3.0, 6.0))
+                        time.sleep(random.uniform(2.0, 4.0))
                     except Exception:
                         logger.warning(
                             "[%s] %s @ %s failed",

@@ -49,7 +49,7 @@ platforms:
     tier: 1
     name: "阿里巴巴(集团主站)"
   antgroup:
-    enabled: true
+    enabled: false
     tier: 1
     name: "蚂蚁集团"
   bytedance:
@@ -85,13 +85,13 @@ platforms:
     tier: 1
     name: "滴滴"
   huawei:
-    enabled: true
+    enabled: false
     tier: 1
     name: "华为"
 
   # Tier 2: 第三方招聘平台（已升级为 Playwright）
   boss:
-    enabled: true
+    enabled: false
     tier: 2
     name: "Boss直聘"
   liepin:

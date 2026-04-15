@@ -78,7 +78,7 @@ class BaseScraper(ABC):
                     logger.info("[%s] searching: %s @ %s", self.platform_name, kw, city)
                     jobs = self._fetch_jobs(kw, city)
                     all_jobs.extend(jobs)
-                    time.sleep(random.uniform(2.0, 5.0))
+                    time.sleep(random.uniform(1.0, 3.0))
                 except Exception:
                     logger.warning(
                         "[%s] %s @ %s failed",
