@@ -98,7 +98,7 @@ def _check_eligibility(job: JobPosting) -> str | None:
     if CAMPUS_RECRUIT.search(title):
         return "campus"
 
-    edu = job.education.strip()
+    edu = (job.education or "").strip()
     if edu and HIGH_EDU_REQUIRED.search(edu):
         return "edu_high"
 
@@ -106,7 +106,7 @@ def _check_eligibility(job: JobPosting) -> str | None:
     if re.search(r"硕士及以上|硕士以上|研究生及以上|研究生以上|硕士学历", req_text):
         return "edu_high_in_req"
 
-    exp = job.experience.strip()
+    exp = str(job.experience or "").strip()
     if exp and HIGH_EXP_FIELD.search(exp):
         return "exp_high"
     if exp:

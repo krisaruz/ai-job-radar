@@ -58,7 +58,7 @@ SCRAPER_REGISTRY = {
     "netease": NeteaseScraper,
     # Tier 1: Playwright
     "bytedance": BytedanceScraper,
-    # Tier 2
+    # Tier 2 (browser-first for anti-bot)
     "boss": BossScraper,
     "liepin": LiepinScraper,
     "zhilian": ZhilianScraper,
@@ -72,6 +72,14 @@ SCRAPER_REGISTRY = {
 # Standalone scrapers (function-based, not class-based)
 STANDALONE_SCRAPERS = {
     "quark": ("src.scrapers.quark", "scrape_quark"),
+    "alibaba": ("src.scrapers.alibaba", "scrape_alibaba"),
+    "antgroup": ("src.scrapers.antgroup", "scrape_antgroup"),
+    "meituan": ("src.scrapers.meituan", "scrape_meituan"),
+    "kuaishou": ("src.scrapers.kuaishou", "scrape_kuaishou"),
+    "xiaohongshu": ("src.scrapers.xiaohongshu", "scrape_xiaohongshu"),
+    "jd": ("src.scrapers.jd", "scrape_jd"),
+    "didi": ("src.scrapers.didi", "scrape_didi"),
+    "huawei": ("src.scrapers.huawei", "scrape_huawei"),
 }
 
 CITIES = ["北京", "上海", "杭州", "深圳", "广州", "成都", "武汉", "南京"]

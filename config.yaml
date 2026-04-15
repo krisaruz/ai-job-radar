@@ -44,6 +44,14 @@ platforms:
     enabled: true
     tier: 1
     name: "阿里巴巴(千问/夸克)"
+  alibaba:
+    enabled: false
+    tier: 1
+    name: "阿里巴巴(集团主站)"
+  antgroup:
+    enabled: true
+    tier: 1
+    name: "蚂蚁集团"
   bytedance:
     enabled: true
     tier: 1
@@ -52,8 +60,36 @@ platforms:
     enabled: true
     tier: 1
     name: "百度"
+  netease:
+    enabled: true
+    tier: 1
+    name: "网易"
+  meituan:
+    enabled: true
+    tier: 1
+    name: "美团"
+  kuaishou:
+    enabled: true
+    tier: 1
+    name: "快手"
+  xiaohongshu:
+    enabled: true
+    tier: 1
+    name: "小红书"
+  jd:
+    enabled: false
+    tier: 1
+    name: "京东"
+  didi:
+    enabled: true
+    tier: 1
+    name: "滴滴"
+  huawei:
+    enabled: true
+    tier: 1
+    name: "华为"
 
-  # Tier 2: 第三方招聘平台 API
+  # Tier 2: 第三方招聘平台（已升级为 Playwright）
   boss:
     enabled: true
     tier: 2
@@ -84,25 +120,3 @@ platforms:
     enabled: false
     tier: 3
     name: "脉脉"
-
-  # 扩展: 更多公司官网（暂未启用）
-  meituan:
-    enabled: false
-    tier: 1
-    name: "美团"
-  kuaishou:
-    enabled: false
-    tier: 1
-    name: "快手"
-  xiaohongshu:
-    enabled: false
-    tier: 1
-    name: "小红书"
-  netease:
-    enabled: true
-    tier: 1
-    name: "网易"
-  huawei:
-    enabled: false
-    tier: 1
-    name: "华为"

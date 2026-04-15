@@ -16,9 +16,18 @@ logger = logging.getLogger(__name__)
 
 PLATFORM_NAMES = {
     "tencent": "腾讯",
+    "quark": "阿里巴巴(千问/夸克)",
     "alibaba": "阿里巴巴",
+    "antgroup": "蚂蚁集团",
     "bytedance": "字节跳动",
     "baidu": "百度",
+    "netease": "网易",
+    "meituan": "美团",
+    "kuaishou": "快手",
+    "xiaohongshu": "小红书",
+    "jd": "京东",
+    "didi": "滴滴",
+    "huawei": "华为",
     "boss": "Boss直聘",
     "liepin": "猎聘",
     "zhilian": "智联招聘",
@@ -26,11 +35,6 @@ PLATFORM_NAMES = {
     "lagou": "拉勾",
     "linkedin": "LinkedIn",
     "maimai": "脉脉",
-    "meituan": "美团",
-    "kuaishou": "快手",
-    "xiaohongshu": "小红书",
-    "netease": "网易",
-    "huawei": "华为",
 }
 
 
