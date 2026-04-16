@@ -19,41 +19,140 @@ permissions:
   contents: write
 
 jobs:
-  scrape:
+  scrape-tier1:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
-
+    timeout-minutes: 30
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Install Playwright browsers
-        run: python -m playwright install chromium --with-deps
-
-      - name: Run scraper
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install chromium --with-deps
+      - name: Scrape Tier 1 (company sites)
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
-          PROXY_URL: ${{ secrets.PROXY_URL }}
         run: |
-          ARGS=""
           if [ -n "${{ github.event.inputs.platform }}" ]; then
-            ARGS="--platform ${{ github.event.inputs.platform }}"
+            python -m src.main --platform "${{ github.event.inputs.platform }}"
           elif [ -n "${{ github.event.inputs.tier }}" ]; then
-            ARGS="--tier ${{ github.event.inputs.tier }}"
+            python -m src.main --tier "${{ github.event.inputs.tier }}"
+          else
+            python -m src.main --tier 1
           fi
-          python -m src.main $ARGS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tier1-data
+          path: |
+            data/jobs.json
+            data/daily/
+          retention-days: 1
 
-      - name: Commit and push changes
+  scrape-tier2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install chromium --with-deps
+      - name: Scrape Tier 2 (job boards)
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: |
+          if [ -n "${{ github.event.inputs.platform }}" ]; then
+            echo "Single platform mode, skip tier2"
+          elif [ -n "${{ github.event.inputs.tier }}" ]; then
+            echo "Tier mode, skip tier2"
+          else
+            python -m src.main --tier 2 --dry-run
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tier2-data
+          path: |
+            data/jobs.json
+            data/daily/
+          retention-days: 1
+
+  merge-and-notify:
+    needs: [scrape-tier1, scrape-tier2]
+    if: always() && needs.scrape-tier1.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: tier1-data
+          path: data-tier1/
+      - uses: actions/download-artifact@v4
+        if: needs.scrape-tier2.result == 'success'
+        with:
+          name: tier2-data
+          path: data-tier2/
+        continue-on-error: true
+
+      - name: Merge results and notify
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: |
+          python - <<'PYEOF'
+          import json, shutil, os
+          from pathlib import Path
+          from src.models import JobPosting, load_jobs_from_json, save_jobs_to_json
+          from src.pipeline.dedup import deduplicate
+          from src.pipeline.diff import compute_diff
+          from src.report import generate_readme
+          from src.notifiers.feishu import send_feishu_notification
+
+          all_jobs = []
+
+          t1 = Path("data-tier1/jobs.json")
+          if t1.exists():
+              all_jobs.extend(load_jobs_from_json(str(t1)))
+
+          t2 = Path("data-tier2/jobs.json")
+          if t2.exists():
+              all_jobs.extend(load_jobs_from_json(str(t2)))
+
+          merged = deduplicate(all_jobs)
+          print(f"Merged: {len(merged)} jobs from tier1+tier2")
+
+          previous = load_jobs_from_json("data/jobs.json")
+          diff = compute_diff(merged, previous) if merged else compute_diff(previous, previous)
+
+          save_jobs_to_json(merged or previous, "data/jobs.json")
+
+          # copy daily files
+          for src_dir in ["data-tier1/daily", "data-tier2/daily"]:
+              if os.path.isdir(src_dir):
+                  os.makedirs("data/daily", exist_ok=True)
+                  for f in os.listdir(src_dir):
+                      shutil.copy2(os.path.join(src_dir, f), os.path.join("data/daily", f))
+
+          generate_readme(merged or previous, Path("README.md"))
+          print(f"Diff: {diff.summary()}")
+
+          webhook = os.environ.get("FEISHU_WEBHOOK_URL")
+          if webhook and diff.has_changes:
+              send_feishu_notification(webhook, diff, total_active=len(merged or previous))
+          PYEOF
+
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
