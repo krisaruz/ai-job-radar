@@ -11,8 +11,11 @@ from __future__ import annotations
 import argparse
 import logging
 import re
+import signal
 import sys
+import threading
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
 from datetime import datetime
 from pathlib import Path
 
@@ -147,41 +150,44 @@ def main() -> None:
     platform_names.sort(key=lambda n: platforms_cfg.get(n, {}).get("tier", 99))
     logger.info("Platforms to scrape: %s", platform_names)
 
-    # --- Phase 1: Scrape ---
-    all_raw_jobs: list[JobPosting] = []
+    PLATFORM_TIMEOUT = 300  # 5 minutes max per platform
 
-    for pname in platform_names:
+    def _scrape_one(pname: str) -> list[JobPosting]:
         tier = platforms_cfg.get(pname, {}).get("tier", "?")
-
         if pname in STANDALONE_SCRAPERS:
             mod_path, func_name = STANDALONE_SCRAPERS[pname]
             logger.info("=== Scraping [Tier %s]: %s (standalone) ===", tier, pname)
-            try:
-                import importlib
-                mod = importlib.import_module(mod_path)
-                fn = getattr(mod, func_name)
-                jobs = fn()
-                logger.info("[%s] raw jobs: %d", pname, len(jobs))
-                all_raw_jobs.extend(jobs)
-            except Exception:
-                logger.error("[%s] standalone scraper failed", pname, exc_info=True)
-            continue
+            import importlib
+            mod = importlib.import_module(mod_path)
+            fn = getattr(mod, func_name)
+            return fn()
 
         scraper_cls = SCRAPER_REGISTRY.get(pname)
         if not scraper_cls:
             logger.warning("No scraper for platform: %s", pname)
-            continue
+            return []
 
         logger.info("=== Scraping [Tier %s]: %s ===", tier, pname)
         scraper = scraper_cls(config)
         try:
-            jobs = scraper.scrape()
-            logger.info("[%s] raw jobs: %d", pname, len(jobs))
-            all_raw_jobs.extend(jobs)
-        except Exception:
-            logger.error("[%s] scraper failed", pname, exc_info=True)
+            return scraper.scrape()
         finally:
             scraper.close()
+
+    # --- Phase 1: Scrape (with per-platform timeout) ---
+    all_raw_jobs: list[JobPosting] = []
+
+    for pname in platform_names:
+        try:
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(_scrape_one, pname)
+                jobs = future.result(timeout=PLATFORM_TIMEOUT)
+                logger.info("[%s] raw jobs: %d", pname, len(jobs))
+                all_raw_jobs.extend(jobs)
+        except TimeoutError:
+            logger.warning("[%s] TIMEOUT after %ds, skipping", pname, PLATFORM_TIMEOUT)
+        except Exception:
+            logger.error("[%s] scraper failed", pname, exc_info=True)
 
     logger.info("Total raw jobs from all platforms: %d", len(all_raw_jobs))
 
