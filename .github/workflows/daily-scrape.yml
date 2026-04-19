@@ -117,7 +117,10 @@ jobs:
           from src.pipeline.dedup import deduplicate
           from src.pipeline.diff import compute_diff
           from src.report import generate_readme
+          from src.config import load_config
           from src.notifiers.feishu import send_feishu_notification
+
+          config = load_config()
 
           all_jobs = []
 
@@ -144,7 +147,7 @@ jobs:
                   for f in os.listdir(src_dir):
                       shutil.copy2(os.path.join(src_dir, f), os.path.join("data/daily", f))
 
-          generate_readme(merged or previous, Path("README.md"))
+          generate_readme(merged or previous, Path("README.md"), config=config)
           print(f"Diff: {diff.summary()}")
 
           webhook = os.environ.get("FEISHU_WEBHOOK_URL")
