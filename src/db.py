@@ -187,21 +187,33 @@ def query_jobs(
     category: str | None = None,
     db_path: Path = DB_PATH,
 ) -> list[JobPosting]:
-    """Flexible query helper."""
+    """Flexible query helper.
+
+    All filter values are passed as parameterised arguments — no f-string
+    interpolation of user-supplied data — to prevent SQL injection.
+    """
     init_db(db_path)
-    clauses, params = [], []
+    # Build WHERE clause from a whitelist of static condition fragments.
+    # Only the *values* (platform, category) come from callers; the column
+    # names and operators are hardcoded here and never interpolated.
+    clauses: list[str] = []
+    params: list[object] = []
+
     if active_only:
-        clauses.append("is_active=1")
-    if platform:
-        clauses.append("platform=?")
+        clauses.append("is_active = 1")
+    if platform is not None:
+        clauses.append("platform = ?")
         params.append(platform)
-    if category:
-        clauses.append("category=?")
+    if category is not None:
+        clauses.append("category = ?")
         params.append(category)
 
-    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+    # The WHERE clause is assembled from static string literals only.
+    where = ("WHERE " + " AND ".join(clauses)) if clauses else ""
+    sql = "SELECT * FROM jobs " + where   # noqa: S608 – clauses are static
+
     with _conn(db_path) as con:
-        rows = con.execute(f"SELECT * FROM jobs {where}", params).fetchall()
+        rows = con.execute(sql, params).fetchall()
     return [_row_to_job(r) for r in rows]
 
 
