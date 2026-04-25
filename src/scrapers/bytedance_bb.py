@@ -4,7 +4,7 @@ Two strategies, attempted in order:
 
 1. **API path** — runs ``adapters/bytedance/search.js`` in the active tab via
    ``bb_run_adapter``. The adapter directly hits jobs.bytedance.com's internal
-   ``/api/v1/search/position`` endpoint, returning structured fields
+   ``POST /api/v1/search/job/posts`` endpoint, returning structured fields
    (description, requirements, …) and supporting offset-based pagination.
 
 2. **DOM fallback** — original behaviour: navigate the search results page and
@@ -34,9 +34,10 @@ ADAPTER_PATH = Path(__file__).parent.parent.parent / "adapters" / "bytedance" / 
 PAGE_SIZE = 10
 MAX_PAGES = 8
 
-# API strategy (adapter)
-API_PAGE_SIZE = 50
-API_MAX_PAGES = 6
+# API strategy (adapter) — keep page_size ≤ 20 to avoid bb-browser stdout
+# truncation (its eval buffer caps around 30 KB).
+API_PAGE_SIZE = 20
+API_MAX_PAGES = 8
 
 KEYWORDS = [
     "大模型测试", "AI测试", "算法测试", "测试开发",
@@ -192,6 +193,12 @@ def _store_api_jobs(items: list[dict], all_jobs: dict[str, JobPosting]) -> int:
         pid = str(it.get("jobId", ""))
         if not pid or pid in all_jobs:
             continue
+        pub_ts = it.get("publishTime", 0)
+        pub_date = ""
+        if pub_ts and isinstance(pub_ts, (int, float)) and pub_ts > 1e12:
+            from datetime import datetime
+            pub_date = datetime.fromtimestamp(pub_ts / 1000).strftime("%Y-%m-%d")
+
         all_jobs[pid] = JobPosting(
             job_id=pid,
             platform="bytedance",
@@ -202,6 +209,7 @@ def _store_api_jobs(items: list[dict], all_jobs: dict[str, JobPosting]) -> int:
             description=it.get("description", ""),
             requirements=it.get("requirements", ""),
             url=it.get("url", ""),
+            publish_date=pub_date,
         )
         new_count += 1
     return new_count

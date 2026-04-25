@@ -112,8 +112,8 @@ def bb_run_adapter(adapter_path: str | Path, args: dict | None = None,
     The active tab must already be on the adapter's expected origin so that
     ``fetch('/api/...')`` calls go to the right server with cookies.
 
-    Returns whatever the adapter returns (after envelope unwrapping by
-    ``bb_eval``), typically a dict like ``{count, jobs: [...]}``.
+    Returns whatever the adapter returns (after envelope unwrapping),
+    typically a dict like ``{count, jobs: [...]}``.
     """
     path = Path(adapter_path)
     if not path.exists():
@@ -122,7 +122,37 @@ def bb_run_adapter(adapter_path: str | Path, args: dict | None = None,
     js_body = path.read_text(encoding="utf-8")
     args_json = json.dumps(args or {}, ensure_ascii=False)
     iife = f"({js_body})({args_json})"
-    return bb_eval(iife, timeout=timeout)
+
+    result = subprocess.run(
+        [BB_CMD, "eval", iife, "--json"],
+        capture_output=True, text=True, timeout=timeout,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"bb-browser eval failed: {result.stderr or result.stdout}")
+
+    raw = result.stdout.strip()
+    if not raw:
+        return None
+
+    try:
+        parsed = json.loads(raw)
+    except json.JSONDecodeError:
+        return raw
+
+    # bb-browser wraps results in {id, success, data: {result: <actual>}}.
+    # Unwrap robustly: the adapter return value may be a dict, list, or string.
+    inner = parsed
+    if isinstance(parsed, dict) and "data" in parsed and "success" in parsed:
+        inner = parsed.get("data", {}).get("result", parsed)
+
+    # If inner is still a string (double-serialized JSON), parse once more.
+    if isinstance(inner, str):
+        try:
+            inner = json.loads(inner)
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+    return inner
 
 
 def ensure_adapters_installed() -> None:
