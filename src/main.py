@@ -12,6 +12,7 @@ import argparse
 import logging
 import re
 import signal
+import sqlite3
 import sys
 import threading
 import time
@@ -321,8 +322,10 @@ def main() -> None:
                 status=pr.status,
                 error_msg=pr.error_msg,
             )
-        except Exception:
-            pass
+        except sqlite3.Error as exc:
+            logger.warning(
+                "Failed to log scrape run for %s: %s", pr.platform, exc
+            )
 
     if diff.removed_jobs:
         archive_dir = data_dir / "archive"
