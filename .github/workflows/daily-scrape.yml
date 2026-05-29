@@ -32,6 +32,15 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements.txt
       - run: python -m playwright install chromium --with-deps
+      - name: Inject browser cookies from secrets
+        run: |
+          mkdir -p data/.cookies
+          if [ -n "$BOSS_STORAGE_STATE" ]; then
+            echo "$BOSS_STORAGE_STATE" | base64 -d > data/.cookies/boss.json
+            echo "BOSS cookies injected"
+          fi
+        env:
+          BOSS_STORAGE_STATE: ${{ secrets.BOSS_STORAGE_STATE }}
       - name: Scrape Tier 1 (company sites)
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
@@ -65,6 +74,15 @@ jobs:
           cache: 'pip'
       - run: pip install -r requirements.txt
       - run: python -m playwright install chromium --with-deps
+      - name: Inject browser cookies from secrets
+        run: |
+          mkdir -p data/.cookies
+          if [ -n "$BOSS_STORAGE_STATE" ]; then
+            echo "$BOSS_STORAGE_STATE" | base64 -d > data/.cookies/boss.json
+            echo "BOSS cookies injected"
+          fi
+        env:
+          BOSS_STORAGE_STATE: ${{ secrets.BOSS_STORAGE_STATE }}
       - name: Scrape Tier 2 (job boards)
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
