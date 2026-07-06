@@ -1,6 +1,6 @@
 # AI 岗位雷达
 
-> 更新时间: 2026-07-06 05:40 | 岗位总数: **265**
+> 更新时间: 2026-07-06 13:13 | 岗位总数: **265**
 
 自动追踪大模型测试 / AI测试 / Agent评测 / 测试开发(AI方向) / AI产品 相关岗位。
 
@@ -64,17 +64,17 @@
 
 | 平台 | 最近抓取 | 状态 | 原始 → 入库 | 在库岗位 |
 | --- | --- | --- | --- | --- |
-| 小红书 | 5小时前 | 🟢 | 10 | 10 |
-| 腾讯 | 5小时前 | 🟢 | 30 | 30 |
-| 阿里巴巴 | 5小时前 | 🟢 | 28 | 28 |
-| 网易 | 5小时前 | 🟢 | 5 | 5 |
-| MokaHR(DeepSeek/Kimi) | 5小时前 | 🟢 | 4 | 4 |
-| 美团 | 5小时前 | 🟢 | 33 | 33 |
-| 快手 | 5小时前 | 🟢 | 31 | 31 |
-| 飞书招聘(MiniMax/智谱AI/商汤/零一万物/百川) | 5小时前 | 🟢 | 12 | 12 |
-| 滴滴 | 5小时前 | 🟢 | 2 | 2 |
-| 字节跳动 | 5小时前 | 🟢 | 83 | 83 |
-| 百度 | 5小时前 | 🟢 | 27 | 27 |
+| 小红书 | 13小时前 | 🟢 | 10 | 10 |
+| 腾讯 | 13小时前 | 🟢 | 30 | 30 |
+| 阿里巴巴 | 13小时前 | 🟢 | 28 | 28 |
+| 网易 | 13小时前 | 🟢 | 5 | 5 |
+| MokaHR(DeepSeek/Kimi) | 13小时前 | 🟢 | 4 | 4 |
+| 美团 | 13小时前 | 🟢 | 33 | 33 |
+| 快手 | 13小时前 | 🟢 | 31 | 31 |
+| 飞书招聘(MiniMax/智谱AI/商汤/零一万物/百川) | 13小时前 | 🟢 | 12 | 12 |
+| 滴滴 | 13小时前 | 🟢 | 2 | 2 |
+| 字节跳动 | 13小时前 | 🟢 | 83 | 83 |
+| 百度 | 13小时前 | 🟢 | 27 | 27 |
 
 ---
 
@@ -472,7 +472,7 @@ _测试开发(AI方向) 14 / Agent评测 5 / AI/Agent产品 5 / 大模型/AI测�
 | [千问事业部-高级测试开发工程师-广州](https://talent.quark.cn/off-campus/position-detail?positionId=7000004301) | 测试开发(AI方向) | 广州 |  |
 | [千问事业部-高级测试开发工程师/测试开发专家-北京](https://talent.quark.cn/off-campus/position-detail?positionId=7000039806) | 测试开发(AI方向) | 北京 |  |
 | [千问事业部-内容安全自动化评测专家-北京](https://talent.quark.cn/off-campus/position-detail?positionId=100018640025) | Agent评测 | 北京 |  |
-| [千问事业部-大模型产品Agentic评测运营-北/杭](https://talent.quark.cn/off-campus/position-detail?positionId=100021680004) | Agent评测 | 北京 |  |
+| [千问事业部-大模型产品Agentic评测运营-京/杭](https://talent.quark.cn/off-campus/position-detail?positionId=100021680004) | Agent评测 | 北京 |  |
 | [千问事业部-大模型智能化评测专家-杭州/深圳/上海](https://talent.quark.cn/off-campus/position-detail?positionId=100010700008) | Agent评测 | 深圳 |  |
 | [千问事业部-大模型评测数据运营-北/杭](https://talent.quark.cn/off-campus/position-detail?positionId=100017080002) | Agent评测 | 北京 |  |
 | [千问事业部-大模型评测数据运营-北京/杭州](https://talent.quark.cn/off-campus/position-detail?positionId=100010480016) | Agent评测 | 北京 |  |
@@ -497,4 +497,4 @@ _测试开发(AI方向) 14 / Agent评测 5 / AI/Agent产品 5 / 大模型/AI测�
 
 ---
 
-*数据自动采集，更新于 2026-07-06 05:40。仅供求职参考。*
+*数据自动采集，更新于 2026-07-06 13:13。仅供求职参考。*
