@@ -276,7 +276,7 @@ platforms:
 
   # Tier 2: 第三方招聘平台（已升级为 Playwright）
   boss:
-    enabled: false
+    enabled: true
     tier: 2
     name: "Boss直聘"
   liepin:
