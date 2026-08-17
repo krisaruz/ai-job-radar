@@ -1,6 +1,6 @@
 # AI 岗位雷达
 
-> 更新时间: 2026-08-17 02:46 | 岗位总数: **309**
+> 更新时间: 2026-08-17 10:07 | 岗位总数: **309**
 
 自动追踪大模型测试 / AI测试 / Agent评测 / 测试开发(AI方向) / AI产品 相关岗位。
 
@@ -37,7 +37,7 @@
 | [百度](jobs/百度.md) | ✅ 已接入 | 35 |
 | [快手](jobs/快手.md) | ✅ 已接入 | 34 |
 | [阿里巴巴](jobs/阿里巴巴.md) | ✅ 已接入 | 31 |
-| [飞书招聘(MiniMax/智谱AI/商汤/零一万物/百川)](jobs/百川智能.md) | ✅ 已接入 | 18 |
+| [飞书招聘(MiniMax/智谱AI/商汤/零一万物/百川)](jobs/MiniMax.md) | ✅ 已接入 | 18 |
 | [小红书](jobs/小红书.md) | ✅ 已接入 | 13 |
 | [网易](jobs/网易.md) | ✅ 已接入 | 7 |
 | [MokaHR(DeepSeek/Kimi)](jobs/Kimi.md) | ✅ 已接入 | 5 |
@@ -54,7 +54,7 @@
 | 猎聘 | 📋 计划中 | - |
 | 脉脉 | 📋 计划中 | - |
 
-**✅ 已接入（11 家）**：[字节跳动](jobs/字节跳动.md)、[腾讯](jobs/腾讯.md)、[美团](jobs/美团.md)、[百度](jobs/百度.md)、[快手](jobs/快手.md)、[阿里巴巴](jobs/阿里巴巴.md)、[飞书招聘(MiniMax/智谱AI/商汤/零一万物/百川)](jobs/百川智能.md)、[小红书](jobs/小红书.md)、[网易](jobs/网易.md)、[MokaHR(DeepSeek/Kimi)](jobs/Kimi.md)、[滴滴](jobs/滴滴.md)
+**✅ 已接入（11 家）**：[字节跳动](jobs/字节跳动.md)、[腾讯](jobs/腾讯.md)、[美团](jobs/美团.md)、[百度](jobs/百度.md)、[快手](jobs/快手.md)、[阿里巴巴](jobs/阿里巴巴.md)、[飞书招聘(MiniMax/智谱AI/商汤/零一万物/百川)](jobs/MiniMax.md)、[小红书](jobs/小红书.md)、[网易](jobs/网易.md)、[MokaHR(DeepSeek/Kimi)](jobs/Kimi.md)、[滴滴](jobs/滴滴.md)
 
 **🔧 调试中（4 家）**：京东、华为、蚂蚁集团、阿里巴巴(集团主站)（爬虫已编写，数据接入调试中）
 
@@ -64,17 +64,17 @@
 
 | 平台 | 最近抓取 | 状态 | 原始 → 入库 | 在库岗位 |
 | --- | --- | --- | --- | --- |
-| 小红书 | 2小时前 | 🟢 | 13 | 13 |
-| 腾讯 | 2小时前 | 🟢 | 41 | 41 |
-| 阿里巴巴 | 2小时前 | 🟢 | 31 | 31 |
-| 网易 | 2小时前 | 🟢 | 7 | 7 |
-| MokaHR(DeepSeek/Kimi) | 2小时前 | 🟢 | 5 | 5 |
-| 美团 | 2小时前 | 🟢 | 40 | 40 |
-| 快手 | 2小时前 | 🟢 | 34 | 34 |
-| 飞书招聘(MiniMax/智谱AI/商汤/零一万物/百川) | 2小时前 | 🟢 | 18 | 18 |
-| 滴滴 | 2小时前 | 🟢 | 2 | 2 |
-| 字节跳动 | 2小时前 | 🟢 | 83 | 83 |
-| 百度 | 2小时前 | 🟢 | 35 | 35 |
+| 小红书 | 10小时前 | 🟢 | 13 | 13 |
+| 腾讯 | 10小时前 | 🟢 | 41 | 41 |
+| 阿里巴巴 | 10小时前 | 🟢 | 31 | 31 |
+| 网易 | 10小时前 | 🟢 | 7 | 7 |
+| MokaHR(DeepSeek/Kimi) | 10小时前 | 🟢 | 5 | 5 |
+| 美团 | 10小时前 | 🟢 | 40 | 40 |
+| 快手 | 10小时前 | 🟢 | 34 | 34 |
+| 飞书招聘(MiniMax/智谱AI/商汤/零一万物/百川) | 10小时前 | 🟢 | 18 | 18 |
+| 滴滴 | 10小时前 | 🟢 | 2 | 2 |
+| 字节跳动 | 10小时前 | 🟢 | 83 | 83 |
+| 百度 | 10小时前 | 🟢 | 35 | 35 |
 
 ---
 
@@ -465,8 +465,8 @@ _AI/Agent产品 18 / Agent评测 17 / 大模型/AI测试 3 / 测试开发(AI方�
 | [混元多模态大模型评测（北京）](http://careers.tencent.com/jobdesc.html?postId=1997884330793394176) | Agent评测 | 深圳 | TEG |
 | [混元大模型评测算法研究员（北京）](http://careers.tencent.com/jobdesc.html?postId=1915233782491881472) | Agent评测 | 深圳 | TEG |
 | [混元数据算法工程师（Coding 数据质量与评测方向）](http://careers.tencent.com/jobdesc.html?postId=2042431106661380096) | Agent评测 | 北京 | TEG |
-| [腾讯游戏-大模型评测专家](http://careers.tencent.com/jobdesc.html?postId=2072330918441435136) | Agent评测 | 深圳 | IEG |
 | [腾讯游戏-大模型评测专家](http://careers.tencent.com/jobdesc.html?postId=2072330916012933120) | Agent评测 | 杭州 | IEG |
+| [腾讯游戏-大模型评测专家](http://careers.tencent.com/jobdesc.html?postId=2072330918441435136) | Agent评测 | 深圳 | IEG |
 | [腾讯游戏-大模型评测专家](http://careers.tencent.com/jobdesc.html?postId=2072330913710260224) | Agent评测 | 北京 | IEG |
 | [腾讯营销-商业化策略产品-大模型评测方向](http://careers.tencent.com/jobdesc.html?postId=2012016099826225152) | Agent评测 | 上海 | CDG |
 | [QQ-Agent产品经理](http://careers.tencent.com/jobdesc.html?postId=2077347119940939776) | AI/Agent产品 | 深圳 | PCG |
@@ -541,4 +541,4 @@ _测试开发(AI方向) 15 / 大模型/AI测试 6 / Agent评测 5 / AI/Agent产�
 
 ---
 
-*数据自动采集，更新于 2026-08-17 02:46。仅供求职参考。*
+*数据自动采集，更新于 2026-08-17 10:07。仅供求职参考。*
