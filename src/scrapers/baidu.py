@@ -32,6 +32,7 @@ class BaiduScraper(BaseScraper):
     def _parse_nuxt_data(self, html: str, city: str) -> list[JobPosting]:
         jobs = []
 
+        # Try __NEXT_DATA__ (Next.js SSR)
         m = re.search(r'<script\s+id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.DOTALL)
         if m:
             try:
@@ -42,15 +43,36 @@ class BaiduScraper(BaseScraper):
                     job = self._dict_to_posting(p)
                     if job and (not city or city in job.location):
                         jobs.append(job)
-                return jobs
+                if jobs:
+                    return jobs
             except (json.JSONDecodeError, KeyError):
                 pass
 
+        # Try __INITIAL_DATA__ (Baidu's custom SSR — actual list data lives in listData.listDetailData)
+        m_init = re.search(r'window\.__INITIAL_DATA__\s*=\s*(\{.*?\})\s*(?:;|</script>)', html, re.DOTALL)
+        if m_init:
+            try:
+                # Baidu's SSR contains JS `undefined` literals that aren't valid JSON
+                raw = m_init.group(1).replace(':undefined', ':null').replace(',undefined', ',null')
+                data = json.loads(raw)
+                list_detail = data.get("listData", {}).get("listDetailData", []) or []
+                for p in list_detail:
+                    job = self._dict_to_posting(p)
+                    if job and (not city or city in job.location):
+                        jobs.append(job)
+                if jobs:
+                    return jobs
+            except (json.JSONDecodeError, KeyError, ValueError):
+                pass
+
+        # Try __NUXT__ (legacy Nuxt.js)
         m2 = re.search(r'window\.__NUXT__\s*=\s*(\{.*?\});?\s*</script>', html, re.DOTALL)
         if m2:
             try:
                 data = json.loads(m2.group(1))
-                return self._walk_nuxt_for_posts(data, city)
+                walked = self._walk_nuxt_for_posts(data, city)
+                if walked:
+                    return walked
             except (json.JSONDecodeError, ValueError):
                 pass
 
@@ -77,6 +99,10 @@ class BaiduScraper(BaseScraper):
             r'window\.__INITIAL_DATA__\s*=\s*(\{.*?\})\s*(?:;|<)',
             re.DOTALL,
         )
+        # Detail route verified against SPA source (list chunk onClick):
+        # window.open("/jobs" + "/detail/" + recruitType + "/" + postId)
+        # recruitType must be the enum value "SOCIAL" (uppercase); lowercase
+        # "social" renders an empty shell page (no SSR detailData).
         for m_ssr in ssr_pattern.finditer(html):
             try:
                 data = json.loads(m_ssr.group(1))
@@ -84,8 +110,9 @@ class BaiduScraper(BaseScraper):
                 if post_info and post_info.get("name"):
                     name = post_info["name"]
                     jid_match = re.search(r'（([A-Z]\d+)）', name)
-                    job_id = jid_match.group(1) if jid_match else name[:15]
-                    detail_url = f"https://talent.baidu.com/jobs/social-detail/{job_id}"
+                    post_id = post_info.get("postId", "")
+                    job_id = jid_match.group(1) if jid_match else (post_id or name[:15])
+                    detail_url = f"https://talent.baidu.com/jobs/detail/SOCIAL/{post_id}" if post_id else ""
                     job = JobPosting(
                         job_id=job_id,
                         platform="baidu",
@@ -113,31 +140,42 @@ class BaiduScraper(BaseScraper):
             if not raw_title or raw_title.startswith("window.") or len(raw_title) < 3:
                 continue
             title = raw_title + f"（{m.group(2)}）"
+            # Fallback path: only J-code available, no postId. Use search URL
+            # so users can reach the job by searching the J-code on the page.
+            from urllib.parse import quote
             job = JobPosting(
                 job_id=m.group(2),
                 platform="baidu",
                 title=title,
                 company="百度",
-                url=f"https://talent.baidu.com/jobs/social-detail/{m.group(2)}",
+                url=f"https://talent.baidu.com/jobs/social-list?search={quote(m.group(2))}",
             )
             if not city or city in html:
                 jobs.append(job)
         return jobs
 
     def _dict_to_posting(self, d: dict) -> JobPosting | None:
-        jid = str(d.get("id", d.get("jobId", d.get("postId", ""))))
-        if not jid:
+        # Baidu SSR uses postId (UUID) for the SPA detail route. jobId is also UUID
+        # but the URL pattern requires postId.
+        post_id = str(d.get("postId", d.get("id", "")))
+        job_id = str(d.get("jobId", d.get("id", post_id)))
+        if not post_id:
             return None
+        # J-codes (e.g. J98291) in the title are display-only IDs and do NOT
+        # work as URL path segments — the route needs the postId UUID.
+        name = d.get("name", d.get("title", "")) or ""
+        jcode_match = re.search(r'（([A-Z]\d+)）', name)
+        display_jid = jcode_match.group(1) if jcode_match else post_id
         return JobPosting(
-            job_id=jid,
+            job_id=display_jid,
             platform="baidu",
-            title=d.get("name", d.get("title", "")),
+            title=name,
             company="百度",
-            department=d.get("department", d.get("businessGroup", "")),
-            location=d.get("city", d.get("location", "")),
-            experience=d.get("workYear", ""),
+            department=d.get("department", d.get("businessGroup", d.get("postType", ""))),
+            location=d.get("city", d.get("location", d.get("workPlace", ""))),
+            experience=d.get("workYear", d.get("workYears", "")),
             education=d.get("education", ""),
-            description=d.get("description", d.get("responsibility", "")),
-            url=f"https://talent.baidu.com/jobs/social-detail/{jid}",
+            description=d.get("description", d.get("responsibility", d.get("workContent", ""))),
+            url=f"https://talent.baidu.com/jobs/detail/SOCIAL/{post_id}",
             publish_date=d.get("publishDate", d.get("updateDate", "")),
         )

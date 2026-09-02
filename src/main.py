@@ -37,6 +37,7 @@ from src.notifiers.feishu import send_feishu_notification
 from src.scrapers.tencent import TencentScraper
 from src.scrapers.baidu import BaiduScraper
 from src.scrapers.netease import NeteaseScraper
+from src.scrapers.bytedance import BytedanceScraper
 
 # Tier 1: 公司官网 Playwright (legacy, kept for fallback)
 # Tier 2: 第三方招聘平台
@@ -100,6 +101,9 @@ SCRAPER_REGISTRY = {
     "tencent": TencentScraper,
     "baidu": BaiduScraper,
     "netease": NeteaseScraper,
+    # Playwright SPA scraper — works in CI (the bb-browser variant needs a
+    # local Chrome daemon and always returned 0 in Actions)
+    "bytedance": BytedanceScraper,
     # Tier 2 (browser-first for anti-bot)
     "boss": BossScraper,
     "liepin": LiepinScraper,
@@ -121,12 +125,15 @@ STANDALONE_SCRAPERS = {
     "xiaohongshu": ("src.scrapers.xiaohongshu", "scrape_xiaohongshu"),
     "jd": ("src.scrapers.jd", "scrape_jd"),
     "huawei": ("src.scrapers.huawei", "scrape_huawei"),
-    # Feishu Jobs (飞书招聘) - MiniMax, 智谱AI
+    # Feishu Jobs (飞书招聘) - MiniMax, 智谱AI, 零一万物, 百川
     "feishu": ("src.scrapers.feishu", "scrape_feishu"),
+    # 商汤 self-hosts the Feishu recruitment SaaS at hr-jobs.sensetime.com
+    "sensetime": ("src.scrapers.sensetime", "scrape_sensetime"),
     # MokaHR - DeepSeek, Kimi
     "moka": ("src.scrapers.moka", "scrape_moka"),
     # bb-browser powered (requires local Chrome + daemon)
-    "bytedance": ("src.scrapers.bytedance_bb", "scrape_bytedance"),
+    # bytedance moved to SCRAPER_REGISTRY (Playwright version works in CI);
+    # didi keeps the bb variant plus the didi_bb fallback in didi.py.
     "didi": ("src.scrapers.didi_bb", "scrape_didi_bb"),
 }
 

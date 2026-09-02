@@ -116,6 +116,9 @@ def scrape_meituan() -> list[JobPosting]:
     jobs: list[JobPosting] = []
     for jid, it in all_items.items():
         desc = it.get("desc", "")
+        # Detail URL scheme changed: /web/social-recruitment/{id} now renders
+        # the 404 page; the live route is /social-recruitment/{id} (verified
+        # with a real browser — job list renders with full JD inline).
         jobs.append(JobPosting(
             job_id=jid,
             platform="meituan",
@@ -125,7 +128,7 @@ def scrape_meituan() -> list[JobPosting]:
             location=it.get("city", ""),
             description=desc,
             requirements="",
-            url=f"https://zhaopin.meituan.com/web/social-recruitment/{jid}",
+            url=f"https://zhaopin.meituan.com/social-recruitment/{jid}",
         ))
 
     logger.info("[meituan] total: %d", len(jobs))

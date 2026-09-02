@@ -19,12 +19,13 @@ logger = logging.getLogger(__name__)
 
 # (显示名称, 飞书租户 subdomain, 可选路径前缀)
 # 标准路径 = /index/，百川等使用自定义二级路径
+# 商汤科技已迁出飞书 SaaS（sensetime.jobs.feishu.cn 整站 404），
+# 现由 src/scrapers/sensetime.py 走 hr-jobs.sensetime.com。
 FEISHU_COMPANIES: list[tuple[str, str, str]] = [
     # ── 已有 ──────────────────────────────────────────────────────
     ("MiniMax",  "vrfi1sk8a0",  "/index/"),
     ("智谱AI",   "zhipu-ai",    "/index/"),
     # ── 新增 ──────────────────────────────────────────────────────
-    ("商汤科技", "sensetime",   "/index/"),
     ("零一万物", "01ai",        "/index/"),
     ("百川智能", "cq6qe6bvfr6", "/baichuanzhaopin/"),
 ]

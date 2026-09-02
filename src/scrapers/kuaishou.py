@@ -100,7 +100,10 @@ def scrape_kuaishou() -> list[JobPosting]:
                 location=str(loc),
                 description=item.get("positionDesc", item.get("description", "")),
                 requirements=item.get("positionReq", item.get("requirement", "")),
-                url=f"https://zhaopin.kuaishou.cn/recruit/e/#/official/social/detail/{pid}",
+                # Detail route captured from the live site: clicking a job row
+                # opens #/official/social/job-info/{pid}. The old social/detail
+                # route now silently redirects back to the list page.
+                url=f"https://zhaopin.kuaishou.cn/recruit/e/#/official/social/job-info/{pid}",
             ))
 
         logger.info("[kuaishou] total: %d", len(jobs))

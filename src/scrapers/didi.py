@@ -56,7 +56,10 @@ def scrape_didi() -> list[JobPosting]:
 
             new_count = 0
             for item in captured:
-                pid = str(item.get("id", item.get("positionId", item.get("jobId", ""))))
+                # Prefer numeric jdId for detail URLs — the JR-code jdNo route
+                # (/social/p/JRxxxx) renders an empty skeleton even for live
+                # jobs; /social/p/{jdId} is the route the site itself uses.
+                pid = str(item.get("jdId") or item.get("id") or item.get("positionId") or item.get("jobId") or "")
                 if pid and pid not in all_items:
                     all_items[pid] = item
                     new_count += 1

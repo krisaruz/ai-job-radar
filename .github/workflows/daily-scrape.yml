@@ -66,18 +66,26 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python -m playwright install chromium --with-deps
       - name: Scrape Tier 2 (job boards)
+        id: tier2_scrape
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
           FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
         run: |
           if [ -n "${{ github.event.inputs.platform }}" ]; then
             echo "Single platform mode, skip tier2"
+            echo "scraped=false" >> "$GITHUB_OUTPUT"
           elif [ -n "${{ github.event.inputs.tier }}" ]; then
             echo "Tier mode, skip tier2"
+            echo "scraped=false" >> "$GITHUB_OUTPUT"
           else
             python -m src.main --tier 2 --dry-run
+            echo "scraped=true" >> "$GITHUB_OUTPUT"
           fi
+      # Only upload artifact when tier2 actually ran. Otherwise the artifact
+      # would contain the untouched jobs.json from checkout, and merge-and-notify
+      # would resurrect offline jobs from that stale copy.
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: steps.tier2_scrape.outputs.scraped == 'true'
         with:
           name: tier2-data
           path: |
@@ -143,9 +151,31 @@ jobs:
           print(f"Merged: {len(merged)} jobs from tier1+tier2")
 
           previous = load_jobs_from_json("data/jobs.json")
-          diff = compute_diff(merged, previous) if merged else compute_diff(previous, previous)
 
-          final_jobs = merged or previous
+          # Freshness guard: the README must only show jobs still online.
+          # - Platforms scraped today (present in `merged`): merged IS the
+          #   complete live list for them, so previous jobs of those platforms
+          #   that were NOT re-scraped today are offline and get dropped.
+          # - Platforms NOT scraped today (scraper failure / disabled): keep
+          #   their jobs from the last STALE_DAYS so one bad run doesn't wipe
+          #   a whole platform's listings.
+          from datetime import datetime, timedelta
+          STALE_DAYS = 2
+          cutoff = (datetime.now() - timedelta(days=STALE_DAYS)).strftime("%Y-%m-%d")
+          platforms_today = {j.platform for j in merged}
+          kept, dropped = [], []
+          for j in previous:
+              if j.platform in platforms_today:
+                  dropped.append(j)  # replaced entirely by today's scrape
+              elif (j.scraped_at or "")[:10] >= cutoff:
+                  kept.append(j)
+              else:
+                  dropped.append(j)
+          final_jobs = deduplicate(merged + kept)
+          print(f"Freshness guard: kept {len(kept)} recent jobs from unscraped platforms, dropped {len(dropped)} stale/offline jobs (platforms scraped today: {sorted(platforms_today)})")
+
+          diff = compute_diff(final_jobs, previous)
+
           save_jobs_to_json(final_jobs, "data/jobs.json")
 
           # Upsert into SQLite - DB already contains historical data from git checkout.
