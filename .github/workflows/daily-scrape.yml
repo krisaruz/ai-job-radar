@@ -143,8 +143,21 @@ jobs:
           if t1.exists():
               all_jobs.extend(load_jobs_from_json(str(t1)))
 
+          # Tier2 artifact guard: when tier2 has no enabled platforms, its step
+          # "keeps previous data unchanged" and uploads the untouched jobs.json
+          # from checkout. Merging that copy would resurrect every job that
+          # tier1 just marked offline. Skip it unless it differs from the
+          # checked-in file (i.e. tier2 actually produced fresh data).
           t2 = Path("data-tier2/jobs.json")
-          if t2.exists():
+          checkout = Path("data/jobs.json")
+          if t2.exists() and checkout.exists():
+              t2_bytes = t2.read_bytes()
+              co_bytes = checkout.read_bytes()
+              if t2_bytes == co_bytes:
+                  print("tier2 artifact identical to checkout (no fresh tier2 data) — skipping")
+              else:
+                  all_jobs.extend(load_jobs_from_json(str(t2)))
+          elif t2.exists():
               all_jobs.extend(load_jobs_from_json(str(t2)))
 
           merged = deduplicate(all_jobs)
