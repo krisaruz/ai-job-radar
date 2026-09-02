@@ -1,0 +1,42 @@
+name: Weekly Link Health Check
+
+on:
+  schedule:
+    - cron: '0 14 * * 1'   # UTC 14:00 Monday = 北京时间 22:00 周一
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: '每公司抽检数量（0=全量）'
+        required: false
+        default: '3'
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install chromium --with-deps
+      - name: Run link health check
+        run: |
+          SAMPLE="${{ github.event.inputs.sample || '3' }}"
+          if [ "$SAMPLE" = "0" ]; then
+            python -m scripts.check_links
+          else
+            python -m scripts.check_links --sample "$SAMPLE"
+          fi
+      - name: Upload health report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-health-report
+          path: data/link-health.md
+          retention-days: 30
