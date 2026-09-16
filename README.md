@@ -1,6 +1,6 @@
 # AI 岗位雷达
 
-> 更新时间: 2026-09-16 06:19 | 岗位总数: **110**
+> 更新时间: 2026-09-16 14:30 | 岗位总数: **111**
 
 自动追踪大模型测试 / AI测试 / Agent评测 / 测试开发(AI方向) / AI产品 相关岗位。
 
@@ -14,7 +14,7 @@
 | --- | --- | --- |
 | 大模型/AI测试 | 大模型评测、算法测试、AI质量保障 | 22 |
 | 测试开发(AI方向) | AI方向的测试开发、评测平台、自动化框架 | 18 |
-| Agent评测 | Agent/大模型效果评测、Benchmark建设 | 42 |
+| Agent评测 | Agent/大模型效果评测、Benchmark建设 | 43 |
 | AI/Agent产品 | AI策略产品、Agent产品、AIGC产品 | 28 |
 
 ## 筛选条件
@@ -31,7 +31,7 @@
 
 | 公司 | 状态 | 岗位数 |
 | --- | --- | --- |
-| [美团](jobs/美团.md) | ✅ 已接入 | 23 |
+| [美团](jobs/美团.md) | ✅ 已接入 | 24 |
 | [百度](jobs/百度.md) | ✅ 已接入 | 20 |
 | [腾讯](jobs/腾讯.md) | ✅ 已接入 | 17 |
 | [快手](jobs/快手.md) | ✅ 已接入 | 15 |
@@ -65,16 +65,16 @@
 
 | 平台 | 最近抓取 | 状态 | 原始 → 入库 | 在库岗位 |
 | --- | --- | --- | --- | --- |
-| 小红书 | 6小时前 | 🟢 | 6 | 6 |
-| 腾讯 | 6小时前 | 🟢 | 17 | 17 |
-| 商汤科技 | 6小时前 | 🟢 | 3 | 3 |
-| 阿里巴巴 | 6小时前 | 🟢 | 13 | 13 |
-| 网易 | 6小时前 | 🟢 | 5 | 5 |
-| 美团 | 6小时前 | 🟢 | 23 | 23 |
-| 快手 | 6小时前 | 🟢 | 15 | 15 |
-| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 6小时前 | 🟢 | 6 | 6 |
-| 字节跳动 | 6小时前 | 🟢 | 2 | 2 |
-| 百度 | 6小时前 | 🟢 | 20 | 20 |
+| 小红书 | 14小时前 | 🟢 | 6 | 6 |
+| 腾讯 | 14小时前 | 🟢 | 17 | 17 |
+| 商汤科技 | 14小时前 | 🟢 | 3 | 3 |
+| 阿里巴巴 | 14小时前 | 🟢 | 13 | 13 |
+| 网易 | 14小时前 | 🟢 | 5 | 5 |
+| 美团 | 14小时前 | 🟢 | 24 | 24 |
+| 快手 | 14小时前 | 🟢 | 15 | 15 |
+| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 14小时前 | 🟢 | 6 | 6 |
+| 字节跳动 | 14小时前 | 🟢 | 2 | 2 |
+| 百度 | 14小时前 | 🟢 | 20 | 20 |
 
 ---
 
@@ -112,7 +112,7 @@
 
 | 技能 | 出现次数 |
 | --- | --- |
-| agent | 137 |
+| agent | 139 |
 | llm | 22 |
 | prompt | 15 |
 | python | 11 |
@@ -245,9 +245,9 @@ _大模型/AI测试 2 / 测试开发(AI方向) 2 / AI/Agent产品 1_
 | 算法测试开发工程师（AI 原生游戏） | 测试开发(AI方向) | 杭州 | 雷火事业群 |
 | 云商-AI产品经理（Agent交付方向） | AI/Agent产品 | 杭州 | 智企事业部 |
 
-### [美团](jobs/美团.md)（23 个岗位）
+### [美团](jobs/美团.md)（24 个岗位）
 
-_Agent评测 10 / AI/Agent产品 9 / 大模型/AI测试 2 / 测试开发(AI方向) 2_
+_Agent评测 11 / AI/Agent产品 9 / 大模型/AI测试 2 / 测试开发(AI方向) 2_
 
 | 岗位 | 方向 | 城市 | 部门 |
 | --- | --- | --- | --- |
@@ -255,6 +255,7 @@ _Agent评测 10 / AI/Agent产品 9 / 大模型/AI测试 2 / 测试开发(AI方�
 | [Agent稳定性测试工程师](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4701960271&highlightType=social) | 大模型/AI测试 | 北京 | 核心本地商业-基础研发平台 |
 | [多模态测试开发工程师](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4258187656&highlightType=social) | 测试开发(AI方向) | 北京 | 核心本地商业-基础研发平台 |
 | [高级测试开发工程师](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4721277378&highlightType=social) | 测试开发(AI方向) | 北京 | 核心本地商业-基础研发平台 |
+| [Agent 评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4777203989&highlightType=social) | Agent评测 | 北京 | 核心本地商业-基础研发平台 |
 | [Agent评测平台产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4614990439&highlightType=social) | Agent评测 | 北京 | 核心本地商业-业务研发平台 |
 | [LongCat - Agent评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=3506281745&highlightType=social) | Agent评测 | 北京 | 核心本地商业-基础研发平台 |
 | [LongCat - 基座agent评测分析算法研究员（生产力方向）](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4381199673&highlightType=social) | Agent评测 | 北京 | 核心本地商业-基础研发平台 |
@@ -325,7 +326,7 @@ _大模型/AI测试 7 / AI/Agent产品 3 / Agent评测 2 / 测试开发(AI方向
 
 | 城市 | 岗位数 |
 | --- | --- |
-| 北京 | 59 |
+| 北京 | 60 |
 | 深圳 | 15 |
 | 广州 | 7 |
 | 杭州 | 7 |
@@ -333,4 +334,4 @@ _大模型/AI测试 7 / AI/Agent产品 3 / Agent评测 2 / 测试开发(AI方向
 
 ---
 
-*数据自动采集，更新于 2026-09-16 06:19。仅供求职参考。*
+*数据自动采集，更新于 2026-09-16 14:30。仅供求职参考。*
