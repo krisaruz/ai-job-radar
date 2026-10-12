@@ -1,6 +1,6 @@
 # AI 岗位雷达
 
-> 更新时间: 2026-10-12 07:40 | 岗位总数: **112**
+> 更新时间: 2026-10-12 19:07 | 岗位总数: **112**
 
 自动追踪大模型测试 / AI测试 / Agent评测 / 测试开发(AI方向) / AI产品 相关岗位。
 
@@ -14,8 +14,8 @@
 | --- | --- | --- |
 | 大模型/AI测试 | 大模型评测、算法测试、AI质量保障 | 22 |
 | 测试开发(AI方向) | AI方向的测试开发、评测平台、自动化框架 | 19 |
-| Agent评测 | Agent/大模型效果评测、Benchmark建设 | 45 |
-| AI/Agent产品 | AI策略产品、Agent产品、AIGC产品 | 26 |
+| Agent评测 | Agent/大模型效果评测、Benchmark建设 | 44 |
+| AI/Agent产品 | AI策略产品、Agent产品、AIGC产品 | 27 |
 
 ## 筛选条件
 
@@ -33,8 +33,8 @@
 | --- | --- | --- |
 | [美团](jobs/美团.md) | ✅ 已接入 | 22 |
 | [百度](jobs/百度.md) | ✅ 已接入 | 21 |
-| [腾讯](jobs/腾讯.md) | ✅ 已接入 | 16 |
-| [快手](jobs/快手.md) | ✅ 已接入 | 16 |
+| [快手](jobs/快手.md) | ✅ 已接入 | 17 |
+| [腾讯](jobs/腾讯.md) | ✅ 已接入 | 15 |
 | [阿里巴巴](jobs/阿里巴巴.md) | ✅ 已接入 | 14 |
 | [小红书](jobs/小红书.md) | ✅ 已接入 | 6 |
 | [飞书招聘(MiniMax/智谱AI/零一万物/百川)](jobs/MiniMax.md) | ✅ 已接入 | 6 |
@@ -55,7 +55,7 @@
 | 猎聘 | 📋 计划中 | - |
 | 脉脉 | 📋 计划中 | - |
 
-**✅ 已接入（10 家）**：[美团](jobs/美团.md)、[百度](jobs/百度.md)、[腾讯](jobs/腾讯.md)、[快手](jobs/快手.md)、[阿里巴巴](jobs/阿里巴巴.md)、[小红书](jobs/小红书.md)、[飞书招聘(MiniMax/智谱AI/零一万物/百川)](jobs/MiniMax.md)、[网易](jobs/网易.md)、[商汤科技](jobs/商汤.md)、[字节跳动](jobs/字节跳动.md)
+**✅ 已接入（10 家）**：[美团](jobs/美团.md)、[百度](jobs/百度.md)、[快手](jobs/快手.md)、[腾讯](jobs/腾讯.md)、[阿里巴巴](jobs/阿里巴巴.md)、[小红书](jobs/小红书.md)、[飞书招聘(MiniMax/智谱AI/零一万物/百川)](jobs/MiniMax.md)、[网易](jobs/网易.md)、[商汤科技](jobs/商汤.md)、[字节跳动](jobs/字节跳动.md)
 
 **🔧 调试中（6 家）**：MokaHR(DeepSeek/Kimi)、京东、华为、滴滴、蚂蚁集团、阿里巴巴(集团主站)（爬虫已编写，数据接入调试中）
 
@@ -65,16 +65,16 @@
 
 | 平台 | 最近抓取 | 状态 | 原始 → 入库 | 在库岗位 |
 | --- | --- | --- | --- | --- |
-| 小红书 | 7小时前 | 🟢 | 6 | 6 |
-| 腾讯 | 7小时前 | 🟢 | 16 | 16 |
-| 商汤科技 | 7小时前 | 🟢 | 4 | 4 |
-| 阿里巴巴 | 7小时前 | 🟢 | 14 | 14 |
-| 网易 | 7小时前 | 🟢 | 5 | 5 |
-| 美团 | 7小时前 | 🟢 | 22 | 22 |
-| 快手 | 7小时前 | 🟢 | 16 | 16 |
-| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 7小时前 | 🟢 | 6 | 6 |
-| 字节跳动 | 7小时前 | 🟢 | 2 | 2 |
-| 百度 | 7小时前 | 🟢 | 21 | 21 |
+| 小红书 | 19小时前 | 🟢 | 6 | 6 |
+| 腾讯 | 19小时前 | 🟢 | 15 | 15 |
+| 商汤科技 | 19小时前 | 🟢 | 4 | 4 |
+| 阿里巴巴 | 19小时前 | 🟢 | 14 | 14 |
+| 网易 | 19小时前 | 🟢 | 5 | 5 |
+| 美团 | 19小时前 | 🟢 | 22 | 22 |
+| 快手 | 19小时前 | 🟢 | 17 | 17 |
+| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 19小时前 | 🟢 | 6 | 6 |
+| 字节跳动 | 19小时前 | 🟢 | 2 | 2 |
+| 百度 | 19小时前 | 🟢 | 21 | 21 |
 
 ---
 
@@ -112,16 +112,16 @@
 
 | 技能 | 出现次数 |
 | --- | --- |
-| agent | 138 |
-| llm | 22 |
-| prompt | 14 |
+| agent | 142 |
+| llm | 24 |
+| prompt | 15 |
 | python | 12 |
 | benchmark | 10 |
 | java | 7 |
 | rag | 7 |
 | badcase | 7 |
+| 大模型 | 4 |
 | typescript | 4 |
-| 大模型 | 3 |
 | sql | 3 |
 | 多模态 | 3 |
 | ci/cd | 2 |
@@ -176,9 +176,9 @@ _Agent评测 5 / 大模型/AI测试 1_
 | [【Dots】大模型评测算法工程师](https://job.xiaohongshu.com/social/position/21093) | Agent评测 | 北京 | 大模型 |
 | [社区AI评测产品经理](https://job.xiaohongshu.com/social/position/21336) | Agent评测 | 北京 | 产品经理 |
 
-### [快手](jobs/快手.md)（16 个岗位）
+### [快手](jobs/快手.md)（17 个岗位）
 
-_Agent评测 9 / 大模型/AI测试 4 / 测试开发(AI方向) 3_
+_Agent评测 9 / 大模型/AI测试 4 / 测试开发(AI方向) 3 / AI/Agent产品 1_
 
 | 岗位 | 方向 | 城市 | 部门 |
 | --- | --- | --- | --- |
@@ -198,6 +198,7 @@ _Agent评测 9 / 大模型/AI测试 4 / 测试开发(AI方向) 3_
 | [训练数据质量评测专家 -【可灵AI】](https://zhaopin.kuaishou.cn/recruit/e/#/official/social/job-info/32325) | Agent评测 |  |  |
 | [音视频大模型评测工程师](https://zhaopin.kuaishou.cn/recruit/e/#/official/social/job-info/32797) | Agent评测 |  |  |
 | [音频大模型评测工程师-【可灵AI专项】](https://zhaopin.kuaishou.cn/recruit/e/#/official/social/job-info/29965) | Agent评测 |  |  |
+| [大模型产品经理 （AI Coding / Agentic 方向）](https://zhaopin.kuaishou.cn/recruit/e/#/official/social/job-info/30282) | AI/Agent产品 |  |  |
 
 ### [百川智能](jobs/百川智能.md)（2 个岗位）
 
@@ -277,9 +278,9 @@ _Agent评测 11 / AI/Agent产品 7 / 大模型/AI测试 2 / 测试开发(AI方�
 | [Agent产品经理（B端）](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4647493132&highlightType=social) | AI/Agent产品 | 北京 | 核心本地商业-美团平台 |
 | [酒店agent收益产品](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4654075979&highlightType=social) | AI/Agent产品 | 北京 | 软硬件服务-酒店SaaS业务部 |
 
-### [腾讯](jobs/腾讯.md)（16 个岗位）
+### [腾讯](jobs/腾讯.md)（15 个岗位）
 
-_Agent评测 5 / 测试开发(AI方向) 4 / AI/Agent产品 4 / 大模型/AI测试 3_
+_测试开发(AI方向) 4 / AI/Agent产品 4 / Agent评测 4 / 大模型/AI测试 3_
 
 | 岗位 | 方向 | 城市 | 部门 |
 | --- | --- | --- | --- |
@@ -294,7 +295,6 @@ _Agent评测 5 / 测试开发(AI方向) 4 / AI/Agent产品 4 / 大模型/AI测�
 | [微信小程序-大模型评测工程师-智能体方向](http://careers.tencent.com/jobdesc.html?postId=2089604837229641728) | Agent评测 | 广州 | WXG |
 | [混元多模态大模型评测（北京）](http://careers.tencent.com/jobdesc.html?postId=1997884330793394176) | Agent评测 | 深圳 | TEG |
 | [混元大模型评测算法研究员（北京）](http://careers.tencent.com/jobdesc.html?postId=1915233782491881472) | Agent评测 | 深圳 | TEG |
-| [腾讯游戏-大模型评测专家](http://careers.tencent.com/jobdesc.html?postId=2072330916012933120) | Agent评测 | 杭州 | IEG |
 | [AI产品经理-AI平台（Agent）方向](http://careers.tencent.com/jobdesc.html?postId=2088450750270324736) | AI/Agent产品 | 深圳 | CDG |
 | [QQ-Agent产品经理](http://careers.tencent.com/jobdesc.html?postId=2077347119940939776) | AI/Agent产品 | 深圳 | PCG |
 | [WorkBuddy-Agent Harness 策略产品经理](http://careers.tencent.com/jobdesc.html?postId=2098252455568654336) | AI/Agent产品 | 深圳 | CSIG |
@@ -330,9 +330,9 @@ _大模型/AI测试 7 / Agent评测 3 / AI/Agent产品 3 / 测试开发(AI方向
 | 北京 | 62 |
 | 深圳 | 14 |
 | 上海 | 7 |
-| 杭州 | 6 |
 | 广州 | 5 |
+| 杭州 | 5 |
 
 ---
 
-*数据自动采集，更新于 2026-10-12 07:40。仅供求职参考。*
+*数据自动采集，更新于 2026-10-12 19:07。仅供求职参考。*
