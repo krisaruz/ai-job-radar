@@ -1,6 +1,6 @@
 # AI 岗位雷达
 
-> 更新时间: 2026-11-01 16:17 | 岗位总数: **127**
+> 更新时间: 2026-11-02 07:59 | 岗位总数: **127**
 
 自动追踪大模型测试 / AI测试 / Agent评测 / 测试开发(AI方向) / AI产品 相关岗位。
 
@@ -12,9 +12,9 @@
 
 | 方向 | 说明 | 岗位数 |
 | --- | --- | --- |
-| 大模型/AI测试 | 大模型评测、算法测试、AI质量保障 | 24 |
+| 大模型/AI测试 | 大模型评测、算法测试、AI质量保障 | 23 |
 | 测试开发(AI方向) | AI方向的测试开发、评测平台、自动化框架 | 19 |
-| Agent评测 | Agent/大模型效果评测、Benchmark建设 | 47 |
+| Agent评测 | Agent/大模型效果评测、Benchmark建设 | 48 |
 | AI/Agent产品 | AI策略产品、Agent产品、AIGC产品 | 37 |
 
 ## 筛选条件
@@ -31,11 +31,11 @@
 
 | 公司 | 状态 | 岗位数 |
 | --- | --- | --- |
-| [美团](jobs/美团.md) | ✅ 已接入 | 25 |
+| [美团](jobs/美团.md) | ✅ 已接入 | 26 |
 | [百度](jobs/百度.md) | ✅ 已接入 | 24 |
 | [腾讯](jobs/腾讯.md) | ✅ 已接入 | 20 |
 | [快手](jobs/快手.md) | ✅ 已接入 | 20 |
-| [阿里巴巴](jobs/阿里巴巴.md) | ✅ 已接入 | 16 |
+| [阿里巴巴](jobs/阿里巴巴.md) | ✅ 已接入 | 15 |
 | [小红书](jobs/小红书.md) | ✅ 已接入 | 7 |
 | [飞书招聘(MiniMax/智谱AI/零一万物/百川)](jobs/MiniMax.md) | ✅ 已接入 | 7 |
 | [网易](jobs/网易.md) | ✅ 已接入 | 4 |
@@ -65,15 +65,15 @@
 
 | 平台 | 最近抓取 | 状态 | 原始 → 入库 | 在库岗位 |
 | --- | --- | --- | --- | --- |
-| 小红书 | 16小时前 | 🟢 | 7 | 7 |
-| 腾讯 | 16小时前 | 🟢 | 20 | 20 |
-| 商汤科技 | 16小时前 | 🟢 | 4 | 4 |
-| 阿里巴巴 | 16小时前 | 🟢 | 16 | 16 |
-| 网易 | 16小时前 | 🟢 | 4 | 4 |
-| 美团 | 16小时前 | 🟢 | 25 | 25 |
-| 快手 | 16小时前 | 🟢 | 20 | 20 |
-| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 16小时前 | 🟢 | 7 | 7 |
-| 百度 | 16小时前 | 🟢 | 24 | 24 |
+| 小红书 | 7小时前 | 🟢 | 7 | 7 |
+| 腾讯 | 7小时前 | 🟢 | 20 | 20 |
+| 商汤科技 | 7小时前 | 🟢 | 4 | 4 |
+| 阿里巴巴 | 7小时前 | 🟢 | 15 | 15 |
+| 网易 | 7小时前 | 🟢 | 4 | 4 |
+| 美团 | 7小时前 | 🟢 | 26 | 26 |
+| 快手 | 7小时前 | 🟢 | 20 | 20 |
+| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 7小时前 | 🟢 | 7 | 7 |
+| 百度 | 7小时前 | 🟢 | 24 | 24 |
 
 ---
 
@@ -83,16 +83,16 @@
 
 | 岗位 | 公司 | 已上线天数 | 首次发现 |
 | --- | --- | --- | --- |
-| 混元多模态大模型评测（北京） | 腾讯 | 194天 | 2026-04-22 |
-| 千问事业部-AI应用&Agent测试专家-杭州/上海/深圳 | 阿里巴巴 | 194天 | 2026-04-22 |
-| 千问事业部-测试Agent&平台开发专家-杭州 | 阿里巴巴 | 194天 | 2026-04-22 |
-| 千问事业部-AI 产品经理 - 千问语音Agent-北京/杭州 | 阿里巴巴 | 194天 | 2026-04-22 |
-| AI计算测试开发工程师（J98291） | 百度 | 194天 | 2026-04-22 |
-| 商家Ai agent产品经理（J99223） | 百度 | 194天 | 2026-04-22 |
-| Agent产品经理（电商方向）（J99416） | 百度 | 194天 | 2026-04-22 |
-| AI 产品经理（私域Agent 方向）（J98474） | 百度 | 194天 | 2026-04-22 |
-| AIGC产品运营专家（J92347） | 百度 | 194天 | 2026-04-22 |
-| 商业AIGC产品经理（J94402） | 百度 | 194天 | 2026-04-22 |
+| 混元多模态大模型评测（北京） | 腾讯 | 195天 | 2026-04-22 |
+| 千问事业部-AI应用&Agent测试专家-杭州/上海/深圳 | 阿里巴巴 | 195天 | 2026-04-22 |
+| 千问事业部-测试Agent&平台开发专家-杭州 | 阿里巴巴 | 195天 | 2026-04-22 |
+| 千问事业部-AI 产品经理 - 千问语音Agent-北京/杭州 | 阿里巴巴 | 195天 | 2026-04-22 |
+| AI计算测试开发工程师（J98291） | 百度 | 195天 | 2026-04-22 |
+| 商家Ai agent产品经理（J99223） | 百度 | 195天 | 2026-04-22 |
+| Agent产品经理（电商方向）（J99416） | 百度 | 195天 | 2026-04-22 |
+| AI 产品经理（私域Agent 方向）（J98474） | 百度 | 195天 | 2026-04-22 |
+| AIGC产品运营专家（J92347） | 百度 | 195天 | 2026-04-22 |
+| 商业AIGC产品经理（J94402） | 百度 | 195天 | 2026-04-22 |
 
 ### 快速下架岗位（≤7天已消失，竞争激烈）
 
@@ -111,14 +111,14 @@
 
 | 技能 | 出现次数 |
 | --- | --- |
-| agent | 160 |
+| agent | 155 |
 | llm | 23 |
 | prompt | 15 |
-| python | 10 |
 | benchmark | 10 |
 | rag | 9 |
-| java | 7 |
+| python | 9 |
 | badcase | 7 |
+| java | 6 |
 | typescript | 4 |
 | 大模型 | 3 |
 | ci/cd | 2 |
@@ -246,9 +246,9 @@ _大模型/AI测试 3 / 测试开发(AI方向) 1_
 | 高级/资深测试工程师 | 大模型/AI测试 | 杭州 | 支付事业部 |
 | 算法测试开发工程师（AI 原生游戏） | 测试开发(AI方向) | 杭州 | 雷火事业群 |
 
-### [美团](jobs/美团.md)（25 个岗位）
+### [美团](jobs/美团.md)（26 个岗位）
 
-_Agent评测 13 / AI/Agent产品 9 / 大模型/AI测试 2 / 测试开发(AI方向) 1_
+_Agent评测 14 / AI/Agent产品 9 / 大模型/AI测试 2 / 测试开发(AI方向) 1_
 
 | 岗位 | 方向 | 城市 | 部门 |
 | --- | --- | --- | --- |
@@ -256,6 +256,7 @@ _Agent评测 13 / AI/Agent产品 9 / 大模型/AI测试 2 / 测试开发(AI方�
 | [Agent稳定性测试工程师](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4701960271&highlightType=social) | 大模型/AI测试 | 北京 | 核心本地商业-基础研发平台 |
 | [多模态测试开发工程师](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4258187656&highlightType=social) | 测试开发(AI方向) | 北京 | 核心本地商业-基础研发平台 |
 | [AI医疗评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4842769542&highlightType=social) | Agent评测 | 北京 | 核心本地商业-医药健康事业部 |
+| [AI评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4877708574&highlightType=social) | Agent评测 | 北京 | 核心本地商业-美团平台 |
 | [AI评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4792416536&highlightType=social) | Agent评测 | 上海 | 核心本地商业-平台及职能部门 |
 | [Agent 评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4777203989&highlightType=social) | Agent评测 | 北京 | 核心本地商业-基础研发平台 |
 | [Agent评测平台产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4614990439&highlightType=social) | Agent评测 | 北京 | 核心本地商业-业务研发平台 |
@@ -305,9 +306,9 @@ _AI/Agent产品 8 / Agent评测 6 / 测试开发(AI方向) 4 / 大模型/AI测�
 | [腾讯元宝-大模型策略产品-语音方向](http://careers.tencent.com/jobdesc.html?postId=2101997688525602816) | AI/Agent产品 | 北京 | CSIG |
 | [证券-AI产品经理-Agent方向](http://careers.tencent.com/jobdesc.html?postId=2110653070814916608) | AI/Agent产品 | 深圳 | CDG |
 
-### [阿里巴巴](jobs/阿里巴巴.md)（16 个岗位）
+### [阿里巴巴](jobs/阿里巴巴.md)（15 个岗位）
 
-_大模型/AI测试 7 / AI/Agent产品 4 / Agent评测 3 / 测试开发(AI方向) 2_
+_大模型/AI测试 6 / AI/Agent产品 4 / Agent评测 3 / 测试开发(AI方向) 2_
 
 | 岗位 | 方向 | 城市 | 部门 |
 | --- | --- | --- | --- |
@@ -316,7 +317,6 @@ _大模型/AI测试 7 / AI/Agent产品 4 / Agent评测 3 / 测试开发(AI方向
 | [千问事业部-高级AI应用研发工程师-多模态质量方向](https://talent.quark.cn/off-campus/position-detail?positionId=100032580002) | 大模型/AI测试 | 北京 |  |
 | [千问事业部-高级AI应用研发工程师-工具质量](https://talent.quark.cn/off-campus/position-detail?positionId=100033500001) | 大模型/AI测试 | 北京 |  |
 | [千问事业部-高级AI应用研发工程师-网盘质量](https://talent.quark.cn/off-campus/position-detail?positionId=100033120003) | 大模型/AI测试 | 广州 |  |
-| [千问事业部-高级AI应用研发工程师-质量工程（引擎 / SDK）](https://talent.quark.cn/off-campus/position-detail?positionId=100021420003) | 大模型/AI测试 | 广州 |  |
 | [千问事业部-高级AI应用研发工程师-长任务Agent质量](https://talent.quark.cn/off-campus/position-detail?positionId=100032600005) | 大模型/AI测试 | 北京 |  |
 | [智元科技-测试开发工程师-广州](https://talent.quark.cn/off-campus/position-detail?positionId=100052580004) | 测试开发(AI方向) | 广州 |  |
 | [智元科技-测试开发工程师-智能助手](https://talent.quark.cn/off-campus/position-detail?positionId=100018600002) | 测试开发(AI方向) | 杭州 |  |
@@ -334,12 +334,12 @@ _大模型/AI测试 7 / AI/Agent产品 4 / Agent评测 3 / 测试开发(AI方向
 
 | 城市 | 岗位数 |
 | --- | --- |
-| 北京 | 68 |
+| 北京 | 69 |
 | 深圳 | 17 |
 | 上海 | 12 |
-| 广州 | 6 |
+| 广州 | 5 |
 | 杭州 | 4 |
 
 ---
 
-*数据自动采集，更新于 2026-11-01 16:17。仅供求职参考。*
+*数据自动采集，更新于 2026-11-02 07:59。仅供求职参考。*
