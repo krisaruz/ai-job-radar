@@ -1,6 +1,6 @@
 # AI 岗位雷达
 
-> 更新时间: 2026-11-02 19:41 | 岗位总数: **126**
+> 更新时间: 2026-11-03 08:13 | 岗位总数: **127**
 
 自动追踪大模型测试 / AI测试 / Agent评测 / 测试开发(AI方向) / AI产品 相关岗位。
 
@@ -15,7 +15,7 @@
 | 大模型/AI测试 | 大模型评测、算法测试、AI质量保障 | 23 |
 | 测试开发(AI方向) | AI方向的测试开发、评测平台、自动化框架 | 19 |
 | Agent评测 | Agent/大模型效果评测、Benchmark建设 | 47 |
-| AI/Agent产品 | AI策略产品、Agent产品、AIGC产品 | 37 |
+| AI/Agent产品 | AI策略产品、Agent产品、AIGC产品 | 38 |
 
 ## 筛选条件
 
@@ -40,10 +40,10 @@
 | [小红书](jobs/小红书.md) | ✅ 已接入 | 6 |
 | [网易](jobs/网易.md) | ✅ 已接入 | 4 |
 | [商汤科技](jobs/商汤.md) | ✅ 已接入 | 4 |
+| [字节跳动](jobs/字节跳动.md) | ✅ 已接入 | 1 |
 | MokaHR(DeepSeek/Kimi) | 🔧 调试中 | 0 |
 | 京东 | 🔧 调试中 | 0 |
 | 华为 | 🔧 调试中 | 0 |
-| 字节跳动 | 🔧 调试中 | 0 |
 | 滴滴 | 🔧 调试中 | 0 |
 | 蚂蚁集团 | 🔧 调试中 | 0 |
 | 阿里巴巴(集团主站) | 🔧 调试中 | 0 |
@@ -55,9 +55,9 @@
 | 猎聘 | 📋 计划中 | - |
 | 脉脉 | 📋 计划中 | - |
 
-**✅ 已接入（9 家）**：[美团](jobs/美团.md)、[百度](jobs/百度.md)、[腾讯](jobs/腾讯.md)、[快手](jobs/快手.md)、[阿里巴巴](jobs/阿里巴巴.md)、[飞书招聘(MiniMax/智谱AI/零一万物/百川)](jobs/MiniMax.md)、[小红书](jobs/小红书.md)、[网易](jobs/网易.md)、[商汤科技](jobs/商汤.md)
+**✅ 已接入（10 家）**：[美团](jobs/美团.md)、[百度](jobs/百度.md)、[腾讯](jobs/腾讯.md)、[快手](jobs/快手.md)、[阿里巴巴](jobs/阿里巴巴.md)、[飞书招聘(MiniMax/智谱AI/零一万物/百川)](jobs/MiniMax.md)、[小红书](jobs/小红书.md)、[网易](jobs/网易.md)、[商汤科技](jobs/商汤.md)、[字节跳动](jobs/字节跳动.md)
 
-**🔧 调试中（7 家）**：MokaHR(DeepSeek/Kimi)、京东、华为、字节跳动、滴滴、蚂蚁集团、阿里巴巴(集团主站)（爬虫已编写，数据接入调试中）
+**🔧 调试中（6 家）**：MokaHR(DeepSeek/Kimi)、京东、华为、滴滴、蚂蚁集团、阿里巴巴(集团主站)（爬虫已编写，数据接入调试中）
 
 **📋 计划中（7 家）**：Boss直聘、LinkedIn、前程无忧、拉勾、智联招聘、猎聘、脉脉
 
@@ -65,15 +65,16 @@
 
 | 平台 | 最近抓取 | 状态 | 原始 → 入库 | 在库岗位 |
 | --- | --- | --- | --- | --- |
-| 小红书 | 19小时前 | 🟢 | 6 | 6 |
-| 腾讯 | 19小时前 | 🟢 | 20 | 20 |
-| 商汤科技 | 19小时前 | 🟢 | 4 | 4 |
-| 阿里巴巴 | 19小时前 | 🟢 | 15 | 15 |
-| 网易 | 19小时前 | 🟢 | 4 | 4 |
-| 美团 | 19小时前 | 🟢 | 26 | 26 |
-| 快手 | 19小时前 | 🟢 | 20 | 20 |
-| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 19小时前 | 🟢 | 7 | 7 |
-| 百度 | 19小时前 | 🟢 | 24 | 24 |
+| 小红书 | 8小时前 | 🟢 | 6 | 6 |
+| 腾讯 | 8小时前 | 🟢 | 20 | 20 |
+| 商汤科技 | 8小时前 | 🟢 | 4 | 4 |
+| 阿里巴巴 | 8小时前 | 🟢 | 15 | 15 |
+| 网易 | 8小时前 | 🟢 | 4 | 4 |
+| 美团 | 8小时前 | 🟢 | 26 | 26 |
+| 快手 | 8小时前 | 🟢 | 20 | 20 |
+| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 8小时前 | 🟢 | 7 | 7 |
+| 字节跳动 | 8小时前 | 🟢 | 1 | 1 |
+| 百度 | 8小时前 | 🟢 | 24 | 24 |
 
 ---
 
@@ -83,16 +84,16 @@
 
 | 岗位 | 公司 | 已上线天数 | 首次发现 |
 | --- | --- | --- | --- |
-| 混元多模态大模型评测（北京） | 腾讯 | 195天 | 2026-04-22 |
-| 千问事业部-AI应用&Agent测试专家-杭州/上海/深圳 | 阿里巴巴 | 195天 | 2026-04-22 |
-| 千问事业部-测试Agent&平台开发专家-杭州 | 阿里巴巴 | 195天 | 2026-04-22 |
-| 千问事业部-AI 产品经理 - 千问语音Agent-北京/杭州 | 阿里巴巴 | 195天 | 2026-04-22 |
-| AI计算测试开发工程师（J98291） | 百度 | 195天 | 2026-04-22 |
-| 商家Ai agent产品经理（J99223） | 百度 | 195天 | 2026-04-22 |
-| Agent产品经理（电商方向）（J99416） | 百度 | 195天 | 2026-04-22 |
-| AI 产品经理（私域Agent 方向）（J98474） | 百度 | 195天 | 2026-04-22 |
-| AIGC产品运营专家（J92347） | 百度 | 195天 | 2026-04-22 |
-| 商业AIGC产品经理（J94402） | 百度 | 195天 | 2026-04-22 |
+| 混元多模态大模型评测（北京） | 腾讯 | 196天 | 2026-04-22 |
+| 千问事业部-AI应用&Agent测试专家-杭州/上海/深圳 | 阿里巴巴 | 196天 | 2026-04-22 |
+| 千问事业部-测试Agent&平台开发专家-杭州 | 阿里巴巴 | 196天 | 2026-04-22 |
+| 千问事业部-AI 产品经理 - 千问语音Agent-北京/杭州 | 阿里巴巴 | 196天 | 2026-04-22 |
+| AI计算测试开发工程师（J98291） | 百度 | 196天 | 2026-04-22 |
+| 商家Ai agent产品经理（J99223） | 百度 | 196天 | 2026-04-22 |
+| Agent产品经理（电商方向）（J99416） | 百度 | 196天 | 2026-04-22 |
+| AI 产品经理（私域Agent 方向）（J98474） | 百度 | 196天 | 2026-04-22 |
+| AIGC产品运营专家（J92347） | 百度 | 196天 | 2026-04-22 |
+| 商业AIGC产品经理（J94402） | 百度 | 196天 | 2026-04-22 |
 
 ### 快速下架岗位（≤7天已消失，竞争激烈）
 
@@ -153,6 +154,14 @@ _Agent评测 2 / AI/Agent产品 1 / 大模型/AI测试 1_
 | [AI美学评测工程师](https://hr-jobs.sensetime.com/exp/position/7654939204527589658/detail) | Agent评测 | 北京 | 设计 |
 | [研究院-AI美学评测工程师](https://hr-jobs.sensetime.com/exp/position/7652299407749433642/detail) | Agent评测 | 北京 | 设计 |
 | [Agent产品经理，企业助手](https://hr-jobs.sensetime.com/exp/position/7678707491991882010/detail) | AI/Agent产品 | 上海 | 产品经理 |
+
+### [字节跳动](jobs/字节跳动.md)（1 个岗位）
+
+_AI/Agent产品 1_
+
+| 岗位 | 方向 | 城市 | 部门 |
+| --- | --- | --- | --- |
+| [Agent产品方案工程师（FDE） - 飞书商业化](https://jobs.bytedance.com/experienced/position/7644825514368993589/detail) | AI/Agent产品 |  | 研发 |
 
 ### [小红书](jobs/小红书.md)（6 个岗位）
 
@@ -255,8 +264,8 @@ _Agent评测 14 / AI/Agent产品 9 / 大模型/AI测试 2 / 测试开发(AI方�
 | [Agent稳定性测试工程师](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4701960271&highlightType=social) | 大模型/AI测试 | 北京 | 核心本地商业-基础研发平台 |
 | [多模态测试开发工程师](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4258187656&highlightType=social) | 测试开发(AI方向) | 北京 | 核心本地商业-基础研发平台 |
 | [AI医疗评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4842769542&highlightType=social) | Agent评测 | 北京 | 核心本地商业-医药健康事业部 |
-| [AI评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4877708574&highlightType=social) | Agent评测 | 北京 | 核心本地商业-美团平台 |
 | [AI评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4792416536&highlightType=social) | Agent评测 | 上海 | 核心本地商业-平台及职能部门 |
+| [AI评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4877708574&highlightType=social) | Agent评测 | 北京 | 核心本地商业-美团平台 |
 | [Agent 评测产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4777203989&highlightType=social) | Agent评测 | 北京 | 核心本地商业-基础研发平台 |
 | [Agent评测平台产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4614990439&highlightType=social) | Agent评测 | 北京 | 核心本地商业-业务研发平台 |
 | [LongCat - 基座agent评测分析算法研究员（生产力方向）](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4381199673&highlightType=social) | Agent评测 | 北京 | 核心本地商业-基础研发平台 |
@@ -341,4 +350,4 @@ _大模型/AI测试 6 / AI/Agent产品 4 / Agent评测 3 / 测试开发(AI方向
 
 ---
 
-*数据自动采集，更新于 2026-11-02 19:41。仅供求职参考。*
+*数据自动采集，更新于 2026-11-03 08:13。仅供求职参考。*
