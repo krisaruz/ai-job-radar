@@ -1,6 +1,6 @@
 # AI 岗位雷达
 
-> 更新时间: 2026-11-16 08:16 | 岗位总数: **128**
+> 更新时间: 2026-11-16 19:46 | 岗位总数: **127**
 
 自动追踪大模型测试 / AI测试 / Agent评测 / 测试开发(AI方向) / AI产品 相关岗位。
 
@@ -15,7 +15,7 @@
 | 大模型/AI测试 | 大模型评测、算法测试、AI质量保障 | 24 |
 | 测试开发(AI方向) | AI方向的测试开发、评测平台、自动化框架 | 18 |
 | Agent评测 | Agent/大模型效果评测、Benchmark建设 | 47 |
-| AI/Agent产品 | AI策略产品、Agent产品、AIGC产品 | 39 |
+| AI/Agent产品 | AI策略产品、Agent产品、AIGC产品 | 38 |
 
 ## 筛选条件
 
@@ -33,7 +33,7 @@
 | --- | --- | --- |
 | [美团](jobs/美团.md) | ✅ 已接入 | 28 |
 | [百度](jobs/百度.md) | ✅ 已接入 | 24 |
-| [腾讯](jobs/腾讯.md) | ✅ 已接入 | 22 |
+| [腾讯](jobs/腾讯.md) | ✅ 已接入 | 21 |
 | [阿里巴巴](jobs/阿里巴巴.md) | ✅ 已接入 | 17 |
 | [快手](jobs/快手.md) | ✅ 已接入 | 16 |
 | [小红书](jobs/小红书.md) | ✅ 已接入 | 8 |
@@ -65,15 +65,15 @@
 
 | 平台 | 最近抓取 | 状态 | 原始 → 入库 | 在库岗位 |
 | --- | --- | --- | --- | --- |
-| 小红书 | 8小时前 | 🟢 | 8 | 8 |
-| 腾讯 | 8小时前 | 🟢 | 22 | 22 |
-| 商汤科技 | 8小时前 | 🟢 | 4 | 4 |
-| 阿里巴巴 | 8小时前 | 🟢 | 17 | 17 |
-| 网易 | 8小时前 | 🟢 | 3 | 3 |
-| 美团 | 8小时前 | 🟢 | 28 | 28 |
-| 快手 | 8小时前 | 🟢 | 16 | 16 |
-| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 8小时前 | 🟢 | 6 | 6 |
-| 百度 | 8小时前 | 🟢 | 24 | 24 |
+| 小红书 | 19小时前 | 🟢 | 8 | 8 |
+| 腾讯 | 19小时前 | 🟢 | 21 | 21 |
+| 商汤科技 | 19小时前 | 🟢 | 4 | 4 |
+| 阿里巴巴 | 19小时前 | 🟢 | 17 | 17 |
+| 网易 | 19小时前 | 🟢 | 3 | 3 |
+| 美团 | 19小时前 | 🟢 | 28 | 28 |
+| 快手 | 19小时前 | 🟢 | 16 | 16 |
+| 飞书招聘(MiniMax/智谱AI/零一万物/百川) | 19小时前 | 🟢 | 6 | 6 |
+| 百度 | 19小时前 | 🟢 | 24 | 24 |
 
 ---
 
@@ -111,7 +111,7 @@
 
 | 技能 | 出现次数 |
 | --- | --- |
-| agent | 164 |
+| agent | 159 |
 | llm | 25 |
 | prompt | 17 |
 | benchmark | 10 |
@@ -276,9 +276,9 @@ _Agent评测 14 / AI/Agent产品 10 / 大模型/AI测试 2 / 测试开发(AI方�
 | [用户产品经理-小美Agent方向](https://zhaopin.meituan.com/web/position/detail?jobUnionId=3939735042&highlightType=social) | AI/Agent产品 | 北京 | 核心本地商业-美团平台 |
 | [闪购-导购Agent产品经理](https://zhaopin.meituan.com/web/position/detail?jobUnionId=4698722766&highlightType=social) | AI/Agent产品 | 北京 | 核心本地商业-闪购事业部 |
 
-### [腾讯](jobs/腾讯.md)（22 个岗位）
+### [腾讯](jobs/腾讯.md)（21 个岗位）
 
-_AI/Agent产品 8 / 大模型/AI测试 5 / Agent评测 5 / 测试开发(AI方向) 4_
+_AI/Agent产品 7 / 大模型/AI测试 5 / Agent评测 5 / 测试开发(AI方向) 4_
 
 | 岗位 | 方向 | 城市 | 部门 |
 | --- | --- | --- | --- |
@@ -300,7 +300,6 @@ _AI/Agent产品 8 / 大模型/AI测试 5 / Agent评测 5 / 测试开发(AI方向
 | [WorkBuddy-Agent Harness 策略产品经理](http://careers.tencent.com/jobdesc.html?postId=2098252455568654336) | AI/Agent产品 | 深圳 | CSIG |
 | [增长产品经理（AI/Agent 方向）](http://careers.tencent.com/jobdesc.html?postId=2089943379306786816) | AI/Agent产品 | 深圳 | PCG |
 | [服务Agent产品经理](http://careers.tencent.com/jobdesc.html?postId=2113112723431796736) | AI/Agent产品 | 深圳 | CSIG |
-| [游戏性能AI分析平台-AI Agent产品经理](http://careers.tencent.com/jobdesc.html?postId=2091816271338455040) | AI/Agent产品 | 上海 | IEG |
 | [腾讯云-Agent Runtime高级技术产品经理(北京/深圳)](http://careers.tencent.com/jobdesc.html?postId=2115025978001637376) | AI/Agent产品 | 深圳 | CSIG |
 | [腾讯元宝-大模型策略产品-语音方向](http://careers.tencent.com/jobdesc.html?postId=2101997688525602816) | AI/Agent产品 | 北京 | CSIG |
 | [证券-AI产品经理-Agent方向](http://careers.tencent.com/jobdesc.html?postId=2110653070814916608) | AI/Agent产品 | 深圳 | CDG |
@@ -337,10 +336,10 @@ _AI/Agent产品 7 / 大模型/AI测试 5 / Agent评测 3 / 测试开发(AI方向
 | --- | --- |
 | 北京 | 75 |
 | 深圳 | 19 |
-| 上海 | 11 |
+| 上海 | 10 |
 | 广州 | 4 |
 | 杭州 | 3 |
 
 ---
 
-*数据自动采集，更新于 2026-11-16 08:16。仅供求职参考。*
+*数据自动采集，更新于 2026-11-16 19:46。仅供求职参考。*
